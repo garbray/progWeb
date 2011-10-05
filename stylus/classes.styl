@@ -1,0 +1,170 @@
+@css {
+/*
+	CSS3 Classes  
+	Modified: Juan Pinilla
+*/
+}
+
+linear-gradient()
+	-webkit-linear-gradient(arguments)
+	-moz-linear-gradient(arguments)
+	-ms-linear-gradient(arguments)
+	-o-linear-gradient(arguments)
+	linear-gradient(arguments)
+
+box-sizing()
+	-moz-box-sizing arguments
+	-webkit-box-sizing arguments
+	box-sizing arguments
+
+invisible()  
+	visibility hidden 
+
+animation() 
+	animation arguments
+	-o-animation arguments
+	-ms-animation arguments
+	-moz-animation arguments
+	-webkit-animation arguments
+
+border-radius()
+	border-radius arguments
+	-o-border-radius arguments
+	-ms-border-radius arguments
+	-moz-border-radius arguments
+	-webkit-border-radius arguments
+	-webkit-background-clip padding-box
+
+box-shadow()
+	-webkit-box-shadow arguments
+	-moz-box-shadow arguments
+	box-shadow arguments
+
+gradient( top_color, bottom_color = false, inverse = false )
+	
+	if !bottom_color
+		original_color = top_color
+		top_color = lighten(original_color, 15%)
+		bottom_color = darken(original_color, 15%)
+	
+	if inverse
+		temp_color = top_color
+		top_color = bottom_color
+		bottom_color = temp_color
+
+	background-color top_color
+	background-image -moz-linear-gradient(top, top_color, bottom_color)
+	background-image -webkit-gradient(linear, left top, left bottom, color-stop(0, top_color), color-stop(1, bottom_color))
+	background-image linear-gradient(top, top_color, bottom_color)
+	filter unquote("progid:DXImageTransform.Microsoft.gradient(startColorStr='" + rgb(bottom_color) + "', EndColorStr='" + rgb(top_color) + "')")
+
+text-shadow( value = 1px 1px 1px rgba(#000, 0.25) ) 
+	text-shadow arguments
+	-o-text-shadow arguments
+	-ms-text-shadow arguments
+	-moz-text-shadow arguments
+	-webkit-text-shadow arguments
+
+transform( ) 
+	transform arguments
+	-o-transform arguments
+	-ms-transform arguments
+	-moz-transform arguments
+	-webkit-transform arguments
+
+transition()
+	transition arguments
+	-o-transition arguments
+	-ms-transition arguments
+	-moz-transition arguments
+	-webkit-transition arguments
+
+transition-property( value = all )
+	transition-property arguments
+	-o-transition-property arguments
+	-ms-transition-property arguments
+	-moz-transition-property arguments
+	-webkit-transition-property arguments
+
+// Image replacement
+ir()
+	background-repeat no-repeat
+	height 100%
+	direction ltr 
+	display block
+	overflow hidden
+	text-align left
+	text-indent -999em
+	width 100%
+
+
+.ir
+	ir()
+
+// Accesible & Design hidden classes
+.hidden  
+	display none
+	visibility hidden 
+
+visuallyhidden()
+	left -9999px
+	position absolute !important
+	top -9999px
+	//clip rect(1px 1px 1px 1px)
+	//clip rect(1px, 1px, 1px, 1px) 
+
+.visuallyhidden
+	visuallyhidden()
+
+.invisible  
+	visibility  hidden 
+
+user-select( value )
+	-webkit-user-select value
+	-khtml-user-select value
+	-moz-user-select value
+	-ms-user-select value
+	-o-user-select value
+	user-select value
+
+noselect()
+	user-select( none )
+
+.noselect
+	noselect()
+	-moz-user-select: -moz-none;
+
+clearfix()
+	zoom 1
+
+	&:before,
+	&:after  
+		content "\0020"
+		display block
+		height 0
+		visibility hidden  
+
+	&:after  
+		clear both
+
+.clearfix
+	clearfix()
+
+.clear
+	display block
+	clear both
+	height 0
+	overflow hidden
+	visibility hidden
+
+
+wrapper()
+	margin 0 auto
+	position relative
+	width 960px
+
+nomargin()
+	margin 0
+
+.nomargin
+	nomargin()
